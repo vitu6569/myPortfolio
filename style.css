@@ -1,27 +1,101 @@
-body {
-    padding: 0;
-    margin: 0;
-    height: 100vh;
-    background-color: #ffe4c4;
+:root {
+    --bg-color: linear-gradient(to bottom, rgb(31, 31, 31), #000000);
+    --bg-color-card: #000000;
+    --bg-img: url(bg.png);
+    --text-color: #e5e5e5;
+    --stroke-color: rgba(255, 255, 255, 0.5);  
+    --surface-color: rgba(255, 255, 255, 0.05);
+    --surface-color-hover: rgba(0, 0, 0, 0.02);
+    --highlight-color: rgba(255, 255, 255, 0.2);
+    --switch-bg-url: url(Icons/moon.svg);
+    --border: White;
 }
+.light {
+    --bg-color: linear-gradient(to bottom, rgb(157, 156, 156), #e5e5e5);
+    --bg-color-card: #e5e5e5;
+    --bg-img: url(bgLight.png);
+    --text-color: #000000;
+    --stroke-color: rgba(0, 0, 0, 0.5);
+    --surface-color: rgba(0, 0, 0, 0.05);
+    --surface-color-hover: rgba(0, 0, 0, 0.02);
+    --highlight-color: rgba(0, 0, 0, 0.1);
+    --switch-bg-url: url(Icons/sun.svg);
+    --border: #000000;
+}
+
+body {
+    padding: 0 100px;
+    margin: 0;
+    min-height: 100vh;
+    background: var(--bg-color);
+    transition: all 0.5s;
+}
+#container {
+    display: flex;
+    flex-direction: column;
+    gap: 154px;
+}
+/* Header */
 #headerMain {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 80px 0 48px;
+    padding: 48px 48px 0 48px;
 }
-#buttons {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 64px;
+/* Switch */
+#switch {
+    position: relative;
+    width: 68px;
 }
-#buttons a {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-size: 24px;
-    text-decoration: none;
-    color: #00000B;
+#switch button {
+    cursor: pointer;
+    width: 32px;
+    height: 32px;
+    background: white var(--switch-bg-url) no-repeat center;
+    border: none;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    animation: slide-back 0.4s forwards;
+    z-index: 1;
+    transform: translateY(-50%);
 }
+.light #switch button {
+    animation: slide-in 0.2s;
+    animation-fill-mode: forwards;
+}
+
+#switch button:hover {
+    outline: 8px solid var(--highlight-color);
+}
+#switch span {
+    display: block;
+    width: 64px;
+    height: 24px;
+    background: var(--surface-color);
+    border: 1px solid var(--stroke-color);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    border-radius: 9999px;
+}
+@keyframes slide-in {
+    from {
+        left: 0;
+    }
+    to {
+        left: 50%;
+    }
+}
+
+@keyframes slide-back {
+    from {
+        left: 50%;
+    }
+    to {
+        left: 0;
+    }
+}
+/* Dropdown */
 #dropdown {
     display: flex;
     align-items: center;
@@ -32,29 +106,135 @@ body {
 
     cursor: pointer;
 }
+#dropdownImg {
+    filter: invert(1);
+}
 
-#container {
+/* First part */
+#firstContainer {
     display: flex;
     flex-direction: column;
+    background: var(--bg-img);
+    background-size: contain;
+    background-position: center 5%;
+    background-repeat: no-repeat;
+    transition: all 0.5s;
 }
 #homeContainer {
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
+    justify-content: center;
+    align-items: center;
     padding: 0 80px;
-    margin: 150px 0;
+    margin: 250px 0;
 }
 #introduction {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-weight: 500;
-    font-size: 74px;
-    color: #00000B;
+    font-size: 10vw;
+    color: var(--text-color);
     margin: 0;
+    letter-spacing: 2.2px;
 }
 #resume {
     width: 750px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-size: 24px;
+    font-weight: 500;
+    font-size: 22px;
     text-decoration: none;
-    color: #00000bbb;
+    text-align: center;
+    color: var(--text-color);
+    text-transform: uppercase;
+    letter-spacing: 2.2px;
+    margin: 0;
+    border-top: 3px dashed var(--text-color);
+}
+
+/* Second part */
+#secondContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 32px;
+    margin: 155px 0 100px 0;
+}
+/* Skills */
+#knowledge {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 16px;
+    text-decoration: none;
+    text-align: center;
+    color: var(--text-color);
+    text-shadow: 1px 3px 11px rgba(0,0,0,.3); 
+    text-transform: uppercase;
+    letter-spacing: 2.2px;
+    margin: 0;
+    border-bottom: 3px dashed var(--border);
+}
+
+#knowledgeContainer {
+    max-width: 1500px;
+    overflow-x: hidden;
+    mask-image: linear-gradient(to right, #0000, #000, #000, #0000);
+}
+.scroller {
+    display: flex;
+    gap: 42px;
+    padding: 1rem;
+    animation: scroll 30s linear infinite;
+}
+.scrollerTwo {
+    display: flex;
+    gap: 42px;
+    padding: 1rem;
+    animation: scrollInvert 30s linear infinite;
+}
+@keyframes scroll {
+        0% {
+            transform: translateX(0);
+        }
+        100% {
+            transform: translateX(calc(-250px * 7));
+        }
+}
+@keyframes scrollInvert {
+    0% {
+        transform: translateX(calc(-250px * 7));
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+/* cards */
+.bannerKnowledge {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 32px;
+    transition: all 0.5s;
+}
+/*
+.bannerKnowledge:hover {
+    background-color: var(--bg-color-card);
+    border-radius: 10px;
+    outline: 1px solid rgba(122, 121, 119, 0.365);
+    transform: scale(1.02);
+}
+*/
+/* Icons */
+#nextJsIcon {
+    filter: invert(1);
+}
+.light #nextJsIcon {
+    filter: invert(0);
+}
+.icons {
+    width: 200px;
+    filter: invert(0);
+}
+.light .icons {
+    width: 200px;
+    filter: invert(1);
 }

@@ -9,28 +9,70 @@
 </head>
 <body>
     <header id="headerMain">
-        <div id="logo">
-            <img src="Icons/icon.png" alt="" width="128px">
-        </div>
-        <div id="buttons">
-            <a href="#headerMain">Home</a>
-            <a href="">Tools</a>
-            <a href="">Projects</a>
-        </div>
+        <div id="switch" onclick="toggleMode()">
+            <button>
+    
+            </button>
+            <span></span>
+          </div>
         <button type="menu" id="dropdown">
-            <img src="Icons/menu.svg" alt="" width="28px" id="dorpdownImg">
+            <img src="Icons/menu.svg" alt="" width="28px" id="dropdownImg">
         </button>
     </header>
     
     <main id="container">
-        <section id="homeContainer">
-            <h1 id="introduction">Hi!<br> I'm Victor,<br> Frontend Developer</h1>
-            <p id="resume">
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dicta ipsa rerum voluptatem assumenda nulla illum, eaque perspiciatis, quo, qui itaque expedita ratione porro tempora temporibus aliquam tenetur. Tempora, aperiam. Animi?
-            </p>
-        </section>
-    </main>
 
+        <section id="firstContainer">
+            <div id="homeContainer">
+                <h1 id="introduction">Hi! I'm Victor!</h1>
+                <p id="resume">
+                    Frontend Developer & 3D Artist
+                </p>
+            </div>
+        </section>
+    
+        <section id="secondContainer">
+            <div id="knowledge">
+                <div id="titleTools">
+                    <h1>knowledge</h1>
+                </div>
+            </div>
+
+            <div id="knowledgeContainer">
+                <ul class="scroller">
+                    <li id="html" class="bannerKnowledge"><img src="Icons/Skills/icons8-html5.svg" alt="" class="icons"></li>
+                    <li id="css" class="bannerKnowledge"><img src="Icons/Skills/icons8-css3.svg" alt="" class="icons"></li>
+                    <li id="javascript" class="bannerKnowledge"><img src="Icons/Skills/icons8-js.svg" alt="" class="icons"></li>
+                    <li id="typescript" class="bannerKnowledge"><img src="Icons/Skills/icons8-typescript.svg" alt="" class="icons"></li>
+                    <li id="npm" class="bannerKnowledge"><img src="Icons/Skills/icons8-npm.svg" alt="" class="icons"></li>
+                    <li id="yarn" class="bannerKnowledge"><img src="Icons/Skills/icons8-yarn-logo.svg" alt="" class="icons"></li>   
+                    <li id="react" class="bannerKnowledge"><img src="Icons/Skills/icons8-react.svg" alt="" class="icons"></li>
+                    <li id="angular" class="bannerKnowledge"><img src="Icons/Skills/icons8-angular.svg" alt="" class="icons"></li>
+                    <li id="next" class="bannerKnowledge"><img src="Icons/Skills/nextjs-icon.svg" alt="" class="icons" id="nextJsIcon"></li>
+                    <li id="vue" class="bannerKnowledge"><img src="Icons/Skills/icons8-vue-js.svg" alt="" class="icons"></li>
+                    <li id="figma" class="bannerKnowledge"><img src="Icons/Skills/icons8-figma.svg" alt="" class="icons"></li>
+                    <li id="blender" class="bannerKnowledge"><img src="Icons/Skills/icons8-blender.svg" alt="" class="icons"></li>
+                </ul>
+
+                <ul class="scrollerTwo">
+                    <li id="html" class="bannerKnowledge"><img src="Icons/Skills/icons8-html5.svg" alt="" class="icons"></li>
+                    <li id="css" class="bannerKnowledge"><img src="Icons/Skills/icons8-css3.svg" alt="" class="icons"></li>
+                    <li id="javascript" class="bannerKnowledge"><img src="Icons/Skills/icons8-js.svg" alt="" class="icons"></li>
+                    <li id="typescript" class="bannerKnowledge"><img src="Icons/Skills/icons8-typescript.svg" alt="" class="icons"></li>
+                    <li id="npm" class="bannerKnowledge"><img src="Icons/Skills/icons8-npm.svg" alt="" class="icons"></li>
+                    <li id="yarn" class="bannerKnowledge"><img src="Icons/Skills/icons8-yarn-logo.svg" alt="" class="icons"></li>   
+                    <li id="react" class="bannerKnowledge"><img src="Icons/Skills/icons8-react.svg" alt="" class="icons"></li>
+                    <li id="angular" class="bannerKnowledge"><img src="Icons/Skills/icons8-angular.svg" alt="" class="icons"></li>
+                    <li id="next" class="bannerKnowledge"><img src="Icons/Skills/nextjs-icon.svg" alt="" class="icons" id="nextJsIcon">
+                    <li id="vue" class="bannerKnowledge"><img src="Icons/Skills/icons8-vue-js.svg" alt="" class="icons"></li>
+                    <li id="figma" class="bannerKnowledge"><img src="Icons/Skills/icons8-figma.svg" alt="" class="icons"></li>
+                    <li id="blender" class="bannerKnowledge"><img src="Icons/Skills/icons8-blender.svg" alt="" class="icons"></li>
+                </ul>
+            </div>
+            </div>
+        </section>
+        
+    </main>
     
 </body>
 <script src="script.js">
